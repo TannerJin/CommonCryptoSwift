@@ -1,4 +1,4 @@
 
 ## CommonCryptoSwift
 
-swift of CommonCrypto
+Swift for CommonCrypto
