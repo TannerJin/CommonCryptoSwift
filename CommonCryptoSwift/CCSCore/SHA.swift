@@ -12,14 +12,14 @@ import CommonCrypto
 // *** Just For 64-bit platforms
 
 public extension String {
-    var sha256: String? {
-        return ccs_sha(str: self)
+    var ccsSHA256: String? {
+        return ccsSHA(str: self)
     }
 }
 
 public extension Data {
-    var sha256: String? {
-        return ccs_sha(data: self)
+    var ccsSHA256: String? {
+        return ccsSHA(data: self)
     }
 }
 
@@ -31,7 +31,7 @@ public enum SHAAlgorithm: Int {
     case SHA512 = 64
 }
 
-public func ccs_sha(str: String, shaType: SHAAlgorithm = .SHA256) -> String? {
+public func ccsSHA(str: String, shaType: SHAAlgorithm = .SHA256) -> String? {
     guard let str_pointer = str.cString(using: .utf8) else { return nil }
     
     let count = shaType.rawValue
@@ -57,7 +57,7 @@ public func ccs_sha(str: String, shaType: SHAAlgorithm = .SHA256) -> String? {
     return result_str
 }
 
-public func ccs_sha(data: Data, shaType: SHAAlgorithm = .SHA256) -> String {
+public func ccsSHA(data: Data, shaType: SHAAlgorithm = .SHA256) -> String {
     var _data = data
     let data_pointer = _data.valuePointer
     

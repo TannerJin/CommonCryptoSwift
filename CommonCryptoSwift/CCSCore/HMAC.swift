@@ -12,14 +12,14 @@ import CommonCrypto
 // *** Just For 64-bit platforms
 
 public extension String {
-    func hmac(algorithm: HmaclAgorithm, key: String) -> String? {
-        return ccs_hmac(str: self, algorithm: algorithm, key: key)
+    func ccsHMAC(algorithm: HmaclAgorithm, key: String) -> String? {
+        return ccsHMACString(self, algorithm: algorithm, key: key)
     }
 }
 
 public extension Data {
     func hmac(algorithm: HmaclAgorithm, key: String, keyEncoding: String.Encoding = .utf8) -> String? {
-        return ccs_hmac(data: self, algorithm: algorithm, key: key, keyEncoding: keyEncoding)
+        return ccsHMACData(self, algorithm: algorithm, key: key, keyEncoding: keyEncoding)
     }
 }
 
@@ -32,7 +32,7 @@ public enum HmaclAgorithm: Int {
     case SHA512 = 64
 }
 
-public func ccs_hmac(str: String, algorithm: HmaclAgorithm, key: String) -> String? {
+public func ccsHMACString(_ str: String, algorithm: HmaclAgorithm, key: String) -> String? {
     guard let str_pointer = str.cString(using: .utf8), let key_pointer = key.cString(using: .utf8) else { return nil }
     
     let count = algorithm.rawValue
@@ -61,7 +61,7 @@ public func ccs_hmac(str: String, algorithm: HmaclAgorithm, key: String) -> Stri
     return result_str
 }
 
-public func ccs_hmac(data: Data, algorithm: HmaclAgorithm, key: String, keyEncoding: String.Encoding = .utf8) -> String? {
+public func ccsHMACData(_ data: Data, algorithm: HmaclAgorithm, key: String, keyEncoding: String.Encoding = .utf8) -> String? {
     guard let key_pointer = key.cString(using: keyEncoding) else { return nil }
     var _data = data
     let data_pointer = _data.valuePointer

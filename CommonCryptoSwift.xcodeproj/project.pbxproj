@@ -10,11 +10,10 @@
 		A93E5B752306417E00DFC61A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E5B742306417E00DFC61A /* main.swift */; };
 		A93E5B7D230641DB00DFC61A /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E5B7C230641DB00DFC61A /* MD5.swift */; };
 		A93E5B7F230690C200DFC61A /* SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E5B7E230690C200DFC61A /* SHA.swift */; };
-		A93E5B82230690F600DFC61A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E5B81230690F600DFC61A /* String.swift */; };
 		A93E5B842306910200DFC61A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E5B832306910200DFC61A /* Data.swift */; };
 		A93E5B872306AFEF00DFC61A /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E5B862306AFEF00DFC61A /* HMAC.swift */; };
 		A93E5B89230924AB00DFC61A /* PKPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E5B88230924AB00DFC61A /* PKPDF.swift */; };
-		A9AF7F83244D34D600003EC1 /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF7F82244D34D600003EC1 /* Cryptor.swift */; };
+		A9AF7F83244D34D600003EC1 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF7F82244D34D600003EC1 /* AES.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,11 +33,10 @@
 		A93E5B742306417E00DFC61A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A93E5B7C230641DB00DFC61A /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		A93E5B7E230690C200DFC61A /* SHA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA.swift; sourceTree = "<group>"; };
-		A93E5B81230690F600DFC61A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A93E5B832306910200DFC61A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A93E5B862306AFEF00DFC61A /* HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
 		A93E5B88230924AB00DFC61A /* PKPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKPDF.swift; sourceTree = "<group>"; };
-		A9AF7F82244D34D600003EC1 /* Cryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptor.swift; sourceTree = "<group>"; };
+		A9AF7F82244D34D600003EC1 /* AES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 		A93E5B80230690CF00DFC61A /* CCSExtension */ = {
 			isa = PBXGroup;
 			children = (
-				A93E5B81230690F600DFC61A /* String.swift */,
 				A93E5B832306910200DFC61A /* Data.swift */,
 			);
 			path = CCSExtension;
@@ -102,7 +99,7 @@
 				A93E5B7E230690C200DFC61A /* SHA.swift */,
 				A93E5B862306AFEF00DFC61A /* HMAC.swift */,
 				A93E5B88230924AB00DFC61A /* PKPDF.swift */,
-				A9AF7F82244D34D600003EC1 /* Cryptor.swift */,
+				A9AF7F82244D34D600003EC1 /* AES.swift */,
 			);
 			path = CCSCore;
 			sourceTree = "<group>";
@@ -165,13 +162,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9AF7F83244D34D600003EC1 /* Cryptor.swift in Sources */,
+				A9AF7F83244D34D600003EC1 /* AES.swift in Sources */,
 				A93E5B7F230690C200DFC61A /* SHA.swift in Sources */,
 				A93E5B89230924AB00DFC61A /* PKPDF.swift in Sources */,
 				A93E5B842306910200DFC61A /* Data.swift in Sources */,
 				A93E5B872306AFEF00DFC61A /* HMAC.swift in Sources */,
 				A93E5B7D230641DB00DFC61A /* MD5.swift in Sources */,
-				A93E5B82230690F600DFC61A /* String.swift in Sources */,
 				A93E5B752306417E00DFC61A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

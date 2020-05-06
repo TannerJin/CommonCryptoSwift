@@ -12,14 +12,14 @@ import CommonCrypto
 // *** Just For 64-bit platforms
 
 public extension String {
-    var md5: String? {
-        return ccs_md5(str: self)
+    var ccsMD5: String? {
+        return ccsMD5String(self)
     }
 }
 
 public extension Data {
-    var md5: String {
-        return ccs_md5(data: self)
+    var ccsMD5: String {
+        return ccsMD5Data(self)
     }
 }
 
@@ -31,7 +31,7 @@ public enum MD5OutputCount: Int {
     static let maxOutputBytesCount = 16
 }
 
-public func ccs_md5(str: String, outuptBitCount: MD5OutputCount = .bits256) -> String? {
+public func ccsMD5String(_ str: String, outuptBitCount: MD5OutputCount = .bits256) -> String? {
     guard let str_pointer = str.cString(using: .utf8) else { return nil }
     
     let char_pointer = UnsafeMutablePointer<UInt8>.allocate(capacity: MD5OutputCount.maxOutputBytesCount)
@@ -52,7 +52,7 @@ public func ccs_md5(str: String, outuptBitCount: MD5OutputCount = .bits256) -> S
     return result_str
 }
 
-public func ccs_md5(data: Data, outuptBitCount: MD5OutputCount = .bits256) -> String {
+public func ccsMD5Data(_ data: Data, outuptBitCount: MD5OutputCount = .bits256) -> String {
     var _data = data
     let data_pointer = _data.valuePointer
     
