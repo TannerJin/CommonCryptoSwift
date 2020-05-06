@@ -15,7 +15,7 @@ var iv = "AD42F6697B035B7580E4FEF93BE20BAD"
 assert("Tanner Jin".ccsMD5 == "50ca3085332d9ab004070ebd01a0ad03")
 
 // MARK: SHA
-assert(ccsSHA(str: "Tanner Jin") == "73995b92194f049cb51ec4d91c9462d4ae92992823b0e43beebefc75001da2e0")
+assert(ccsSHA(str: "Tanner Jin", shaType: .SHA256) == "73995b92194f049cb51ec4d91c9462d4ae92992823b0e43beebefc75001da2e0")
 
 assert(ccsSHA(str: "Tanner Jin", shaType: .SHA384) == "c73e163b2e71125a61aa807360b619a455daead92e06684fe40fafe6790119c39c60678b150dfc5626c2ec8140c3d575")
 
