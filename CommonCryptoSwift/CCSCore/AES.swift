@@ -16,7 +16,7 @@ public func ccsAESEncrypt(key: String, iv: String, str: String) -> Data? {
         else { return nil }
     
     var outDataSize = ((str.utf8.count + 16) >> 4) << 4  // 取16整数
-    var outData = calloc(outDataSize, 1)
+    var outData = calloc(1, outDataSize)
     defer {
         free(outData)
     }
@@ -40,7 +40,7 @@ public func ccsAESDecrypt(key: String, iv: String, base64Data: Data) -> String? 
         else { return nil }
      
     var outDataSize = ((data.count + 16) >> 4) << 4  // 取16整数
-    var outData = calloc(outDataSize, 1)    // 这里调用calloc, 因为calloc会将分配的内存空间清零 (cleared_requested = 1), 避免CString转换成Swift.String出现问题
+    var outData = calloc(1, outDataSize)    // 这里必须调用calloc, 因为calloc会将分配的内存空间清0 (cleared_requested = 1), 避免CString转换成Swift.String出现问题(遇到00字节才停止)
     defer {
         free(outData)
     }
